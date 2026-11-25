@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPO Federations &amp; Confederation Interest Form | FPO Portal</title>
+  <meta name="description" content="What is an FPO Federation / State-Level Producer Company (SLPC), official list of SFAC-supported FPO Federations across India, and interactive Confederation Interest Form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <main>
+    <!-- Banner -->
+    <section class="page-banner">
+      <div class="container hero-grid">
+        <div>
+          <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Federations &amp; Confederation Form</span></div>
+          <span class="badge badge-amber">Tier-2 &amp; Tier-3 Aggregation &bull; SFAC SLPC Framework</span>
+          <h1 class="hero-title">FPO Federations, State-Level Consortia &amp; Confederation Interest</h1>
+          <p class="hero-subtitle">
+            When primary FPOs unite into <strong>State-Level Producer Companies (SLPCs) and Federations</strong>, they gain collective bargaining power for policy dialogue, bulk agro-inputs, institutional credit syndication, large-scale processing, and national/export market contracts.
+          </p>
+          <div class="hero-actions">
+            <a href="#federation-list" class="btn btn-primary">Explore FPO Federations</a>
+            <a href="#interest-form" class="btn btn-accent">Submit Confederation Interest Form</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="fpo-federation.jpg" alt="FPO Federation leaders inspecting graded spices, pulses, and packaged retail produce inside a modern aggregation warehouse" />
+          <div class="hero-caption">
+            <span><strong>Apex Scale:</strong> Uniting village FPOs for national &amp; export trade</span>
+            <span class="badge badge-green">8 SLPCs + National</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is a Federation -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="badge badge-green">SFAC Federation Framework</span>
+            <h2>What Is an FPO Federation &amp; Why Does It Matter?</h2>
+            <p>Supported by SFAC under the Companies Act as State-Level Producer Companies (SLPCs) or Cooperative Federations, federations serve as umbrella support systems owned by member FPOs.</p>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="icon-pill">1</div>
+            <h3>Inter-FPO Coordination</h3>
+            <p>Synchronizes commodity calendars, shared warehousing, and joint procurement across dozens or hundreds of primary FPOs within a state.</p>
+          </div>
+          <div class="card">
+            <div class="icon-pill">2</div>
+            <h3>Collective Policy Dialogue</h3>
+            <p>Represents smallholder farmer interests directly before State Agriculture Departments, Mandi Boards, and Central Ministries on APMC and tax reforms.</p>
+          </div>
+          <div class="card">
+            <div class="icon-pill">3</div>
+            <h3>Access to Inputs &amp; Technology</h3>
+            <p>Negotiates manufacturer-level bulk rates for seeds, fertilizers, and farm machinery on behalf of all member FPOs.</p>
+          </div>
+          <div class="card">
+            <div class="icon-pill">4</div>
+            <h3>Cost-Effective Capacity Building</h3>
+            <p>Delivers standardized accounting, GST/FSSAI compliance, e-NAM/ONDC onboarding, and executive mentorship at scale.</p>
+          </div>
+          <div class="card">
+            <div class="icon-pill">5</div>
+            <h3>Strengthened Creditworthiness</h3>
+            <p>Aggregates balance sheets and Credit Guarantee Fund access to negotiate lower-interest working capital and trade finance from commercial banks.</p>
+          </div>
+          <div class="card">
+            <div class="icon-pill">6</div>
+            <h3>Mega Agribusiness &amp; Exports</h3>
+            <p>Fulfills high-volume institutional tenders (NAFED, NCCF, FCI, GeM) and corporate/export contracts that individual FPOs cannot service alone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- List of Federations -->
+    <section class="section section-alt" id="federation-list">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="badge badge-teal">SFAC State-Level Producer Companies &amp; National Platforms</span>
+            <h2>Directory of FPO Federations in India</h2>
+            <p>The 8 State-Level Producer Companies (SLPCs) supported by SFAC in its initial federation phases alongside national multi-stakeholder ecosystem platforms.</p>
+          </div>
+        </div>
+
+        <div class="table-controls">
+          <input type="search" id="fed-search" class="input" placeholder="Search federation name, state, or commodity..." style="min-width: 260px;" />
+          <select id="fed-state" class="select">
+            <option value="all">All States / National</option>
+          </select>
+        </div>
+
+        <div class="card-grid" id="federations-grid"></div>
+      </div>
+    </section>
+
+    <!-- Confederation Interest Form -->
+    <section class="section" id="interest-form">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="badge badge-amber">Join the Apex Network</span>
+            <h2>FPO Confederation Interest Form</h2>
+            <p>Register your FPO or State-Level Consortium's interest in collaborating on collective marketing, bulk input procurement, shared processing infrastructure, and national confederation advocacy.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="confederation-form" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="fpoName">FPO / Federation Legal Name *</label>
+                <input class="input" type="text" id="fpoName" required placeholder="e.g., Moyakheda Farm Producer Company Ltd." />
+              </div>
+
+              <div class="form-field">
+                <label for="regNo">CIN / Registration Number *</label>
+                <input class="input" type="text" id="regNo" required placeholder="e.g., U01403MP2022PTC059001" />
+              </div>
+
+              <div class="form-field">
+                <label for="legalForm">Legal Structure *</label>
+                <select class="select" id="legalForm" required>
+                  <option value="">Select legal form...</option>
+                  <option value="Farmer Producer Company (Companies Act)">Farmer Producer Company (Companies Act)</option>
+                  <option value="Cooperative Society / MACS">Cooperative Society / MACS</option>
+                  <option value="State Level Producer Company (SLPC)">State Level Producer Company (SLPC)</option>
+                  <option value="Fish Farmers Producer Organization (FFPO)">Fish Farmers Producer Organization (FFPO)</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="iaName">Promoting Implementing Agency (IA)</label>
+                <select class="select" id="iaName">
+                  <option value="SFAC">SFAC</option>
+                  <option value="NABARD">NABARD</option>
+                  <option value="NCDC">NCDC</option>
+                  <option value="NAFED">NAFED</option>
+                  <option value="FDRVC">FDRVC</option>
+                  <option value="NERAMAC">NERAMAC</option>
+                  <option value="NDDB">NDDB</option>
+                  <option value="State / University IA">Other State / University IA</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="state">State / Union Territory *</label>
+                <select class="select" id="state" required>
+                  <option value="">Select State / UT...</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="district">District &amp; Block *</label>
+                <input class="input" type="text" id="district" required placeholder="e.g., Ujjain / Mahidpur Block" />
+              </div>
+
+              <div class="form-field">
+                <label for="members">Total Shareholder Farmers *</label>
+                <input class="input" type="number" id="members" min="10" required placeholder="e.g., 550" />
+              </div>
+
+              <div class="form-field">
+                <label for="turnover">Annual Turnover Band (FY 2024â€“25)</label>
+                <select class="select" id="turnover">
+                  <option value="Under Rs. 25 Lakh">Under Rs. 25 Lakh</option>
+                  <option value="Rs. 25 Lakh â€“ Rs. 1 Crore">Rs. 25 Lakh â€“ Rs. 1 Crore</option>
+                  <option value="Rs. 1 Crore â€“ Rs. 5 Crore">Rs. 1 Crore â€“ Rs. 5 Crore</option>
+                  <option value="Rs. 5 Crore â€“ Rs. 10 Crore">Rs. 5 Crore â€“ Rs. 10 Crore</option>
+                  <option value="Above Rs. 10 Crore">Above Rs. 10 Crore</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="commodities">Primary Commodities &amp; Value-Added Products *</label>
+                <input class="input" type="text" id="commodities" required placeholder="e.g., Wheat, Soyabean, Turmeric, Honey, Millets, Vegetables" />
+              </div>
+
+              <div class="form-field full">
+                <label>Confederation Collaboration Areas (Select all that apply) *</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="Bulk Input Procurement" checked /> Bulk Input Procurement</label>
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="e-NAM & ONDC Market Linkage" checked /> e-NAM &amp; ONDC Market Linkage</label>
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="Shared Cold Chain & Processing" /> Shared Cold Chain &amp; Processing</label>
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="Institutional / Export B2B Trade" /> Institutional / Export B2B Trade</label>
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="Credit Guarantee & Working Capital" /> Credit Guarantee &amp; Working Capital</label>
+                  <label class="checkbox-pill"><input type="checkbox" name="interests" value="Policy Advocacy & Governance" /> Policy Advocacy &amp; Governance</label>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="repName">Authorized Representative (Chairman / CEO) *</label>
+                <input class="input" type="text" id="repName" required placeholder="Full Name &amp; Designation" />
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Mobile Number *</label>
+                <input class="input" type="tel" id="phone" required placeholder="10-digit mobile number" />
+              </div>
+
+              <div class="form-field full">
+                <label for="email">Official Email Address *</label>
+                <input class="input" type="email" id="email" required placeholder="name@fpocompany.in" />
+              </div>
+
+              <div class="form-field full">
+                <label for="notes">Key Support Needed / Remarks</label>
+                <textarea class="textarea" id="notes" rows="3" placeholder="Share current infrastructure, buyer targets, or federation partnership goals..."></textarea>
+              </div>
+            </div>
+
+            <div class="hero-actions mt-3">
+              <button type="submit" class="btn btn-primary">Submit Confederation Interest</button>
+              <button type="reset" class="btn btn-outline">Reset Form</button>
+            </div>
+          </form>
+
+          <div id="form-feedback"></div>
+        </div>
+
+        <div class="card mt-3" id="saved-submissions-card" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+            <h3>Submitted Confederation Expressions of Interest (Saved Locally)</h3>
+            <button class="btn btn-outline btn-sm" id="clear-submissions-btn">Clear History</button>
+          </div>
+          <div class="table-wrap mt-1">
+            <table>
+              <thead>
+                <tr>
+                  <th>Reference ID</th>
+                  <th>FPO / Federation Name</th>
+                  <th>State &amp; District</th>
+                  <th>Farmers</th>
+                  <th>Commodities</th>
+                  <th>Interests</th>
+                </tr>
+              </thead>
+              <tbody id="saved-submissions-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Render Federations Directory
+      const feds = window.FPO_DATA.federations;
+      const fedSearch = document.getElementById("fed-search");
+      const fedState = document.getElementById("fed-state");
+      const fedGrid = document.getElementById("federations-grid");
+
+      [...new Set(feds.map(f => f.state))].forEach(st => {
+        const opt = document.createElement("option");
+        opt.value = st;
+        opt.textContent = st;
+        fedState.appendChild(opt);
+      });
+
+      function renderFeds() {
+        const q = fedSearch.value.trim().toLowerCase();
+        const st = fedState.value;
+        const filtered = feds.filter(f => {
+          const matchSt = st === "all" || f.state === st;
+          const matchQ = !q ||
+            f.name.toLowerCase().includes(q) ||
+            f.state.toLowerCase().includes(q) ||
+            f.focus.toLowerCase().includes(q) ||
+            f.role.toLowerCase().includes(q);
+          return matchSt && matchQ;
+        });
+
+        fedGrid.innerHTML = filtered.map(f => `
+          <article class="card card-hover">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.4rem;">
+              <span class="badge badge-green">${f.state}</span>
+              <span class="badge badge-amber">${f.level}</span>
+            </div>
+            <h3>${f.name}</h3>
+            <p>${f.role}</p>
+            <div class="small" style="background:var(--surface-alt); padding:0.75rem; border-radius:10px; border:1px solid var(--border);">
+              <div><strong>HQ:</strong> ${f.location}</div>
+              <div><strong>Legal Form:</strong> ${f.legalForm}</div>
+              <div><strong>Key Commodities:</strong> ${f.focus}</div>
+            </div>
+            <div style="margin-top:auto;">
+              <a class="btn btn-outline btn-sm" href="${f.website}" target="_blank" rel="noopener noreferrer">Federation Reference &nearr;</a>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      fedSearch.addEventListener("input", renderFeds);
+      fedState.addEventListener("change", renderFeds);
+      renderFeds();
+
+      // 2. Populate States in Confederation Interest Form
+      const formState = document.getElementById("state");
+      window.FPO_DATA.stateWiseStats.forEach(s => {
+        const opt = document.createElement("option");
+        opt.value = s.state;
+        opt.textContent = s.state;
+        formState.appendChild(opt);
+      });
+
+      // 3. Handle Confederation Interest Form Submission
+      const STORAGE_KEY = "fpo_bharat_confederation_eoi";
+      const form = document.getElementById("confederation-form");
+      const feedback = document.getElementById("form-feedback");
+      const savedCard = document.getElementById("saved-submissions-card");
+      const savedBody = document.getElementById("saved-submissions-body");
+
+      function loadSubmissions() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function renderSubmissions() {
+        const items = loadSubmissions();
+        if (!items.length) {
+          savedCard.style.display = "none";
+          return;
+        }
+        savedCard.style.display = "block";
+        savedBody.innerHTML = items.map(item => `
+          <tr>
+            <td><strong>${item.refId}</strong></td>
+            <td><strong>${item.fpoName}</strong><br><span class="small muted">${item.regNo}</span></td>
+            <td>${item.state}<br><span class="small muted">${item.district}</span></td>
+            <td>${item.members}</td>
+            <td class="small">${item.commodities}</td>
+            <td class="small">${item.interests.join(", ")}</td>
+          </tr>
+        `).join("");
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const checkedInterests = [...form.querySelectorAll('input[name="interests"]:checked')].map(el => el.value);
+
+        if (!form.checkValidity() || checkedInterests.length === 0) {
+          feedback.innerHTML = `<div class="alert-box" style="background:#fef2f2; border-color:#fca5a5; color:#991b1b;">
+            <strong>Please complete all required (*) fields</strong> and select at least one Confederation Collaboration Area.
+          </div>`;
+          form.reportValidity();
+          return;
+        }
+
+        const entry = {
+          refId: "FPO-CONF-" + Math.floor(100000 + Math.random() * 900000),
+          fpoName: document.getElementById("fpoName").value.trim(),
+          regNo: document.getElementById("regNo").value.trim(),
+          legalForm: document.getElementById("legalForm").value,
+          iaName: document.getElementById("iaName").value,
+          state: document.getElementById("state").value,
+          district: document.getElementById("district").value.trim(),
+          members: document.getElementById("members").value.trim(),
+          turnover: document.getElementById("turnover").value,
+          commodities: document.getElementById("commodities").value.trim(),
+          interests: checkedInterests,
+          repName: document.getElementById("repName").value.trim(),
+          phone: document.getElementById("phone").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          notes: document.getElementById("notes").value.trim(),
+          submittedAt: new Date().toLocaleString()
+        };
+
+        const existing = loadSubmissions();
+        existing.unshift(entry);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+
+        feedback.innerHTML = `
+          <div class="alert-box alert-success">
+            <h3 style="margin:0 0 0.4rem;">Expression of Interest Recorded (${entry.refId})</h3>
+            <p style="margin:0 0 0.5rem;">Thank you, <strong>${entry.repName}</strong>! Your confederation interest for <strong>${entry.fpoName}</strong> (${entry.state}) has been logged locally in your browser.</p>
+            <div class="small">
+              <strong>Selected Focus:</strong> ${entry.interests.join(" â€¢ ")} | <strong>Turnover:</strong> ${entry.turnover} | <strong>IA:</strong> ${entry.iaName}
+            </div>
+          </div>
+        `;
+        renderSubmissions();
+        form.reset();
+      });
+
+      document.getElementById("clear-submissions-btn").addEventListener("click", () => {
+        localStorage.removeItem(STORAGE_KEY);
+        renderSubmissions();
+        feedback.innerHTML = "";
+      });
+
+      renderSubmissions();
+    });
+  </script>
+</body>
+</html>
+
