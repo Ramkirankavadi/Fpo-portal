@@ -299,29 +299,17 @@
         <!-- Card View -->
         <div class="card-grid mt-2" id="cbbo-dir-cards-wrap" style="display:none;"></div>
       </div>
-    </section>
-
-    <!-- Documented CBBOs & Each CBBO's List of Promoted FPOs -->
-    <section class="section section-alt">
+    </section> 
+        <!-- Statewise FPO Registry Explorer -->
+    <section class="section section-alt" id="fpo-registry">
       <div class="container">
         <div class="section-header">
           <div>
-            <h2>Featured CBBOs &amp; Their Promoted FPOs</h2>
-            <p>
-              Explore documented CBBOs (including NABARD-recognized <strong>MABIF</strong> with its 25 Tamil Nadu FPOs, plus SFAC case-study CBBOs) mapped directly to their promoted FPOs.
-            </p>
+            <span class="badge badge-green">Statewise FPO Registry &amp; 2024–25 Highlights</span>
+            <h2>Searchable List of Promoted FPOs Across States</h2>
+            <p>Browse verified FPO entries spanning 25+ States/UTs combining the Statewise FPO Registry and top-performing 10K Scheme / NBHM FPOs, with built-in support to add more FPOs for future updates.</p>
           </div>
-        </div>
-
-        <div class="table-controls">
-          <input type="search" id="cbbo-search" class="input" placeholder="Search CBBO name, FPO name, or state..." style="min-width: 280px;" />
-          <span class="small muted" id="cbbo-count-label"></span>
-        </div>
-
-        <div class="card-grid-2" id="cbbo-list-mount"></div>
-      </div>
-    </section>
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
             <button type="button" class="btn btn-primary btn-sm" id="toggle-add-fpo-btn">+ Add New FPO</button>
             <button type="button" class="btn btn-outline btn-sm" id="export-fpo-csv-btn">Export CSV</button>
             <button type="button" class="btn btn-outline btn-sm" id="export-fpo-json-btn">Export JSON</button>
@@ -1043,81 +1031,6 @@
 
       stateSearchEl.addEventListener("input", renderStateAnalysis);
       renderStateAnalysis();
-
-      // =========================================================================
-      // 2. FEATURED CBBO PROFILES (MABIF + SFAC Case Study CBBOs)
-      // =========================================================================
-      const cbboSearch = document.getElementById("cbbo-search");
-      const cbboMount = document.getElementById("cbbo-list-mount");
-      const cbboCount = document.getElementById("cbbo-count-label");
-
-      const mabifEntry = {
-        cbbo: "MABIF (Madurai Agribusiness Incubation Forum) — NABARD CBBO",
-        state: "Tamil Nadu (11 Districts — 25 FPOs)",
-        ia: "NABARD",
-        focus: "Handholding in business planning, statutory compliance, market linkage, NABL food testing & packaging across 25 Tamil Nadu FPOs.",
-        fpos: [
-          "1. Vagai Millets FPC Ltd. (Madurai — 536 Farmers, Millets & Oilseeds)",
-          "2. Kottampatti Pasumai FPC Ltd. (Madurai — 315 Farmers, Paddy, Maize, Banana)",
-          "3. Puthur Ilantheral FPC Ltd. (Tirunelveli — 300 Farmers)",
-          "4. Kanyakumari Agri Products FPC Ltd. (Kanyakumari — 514 Farmers, Rubber & Banana)",
-          "5. Vagai Banana Farmers FPC Ltd. (Theni — 338 Farmers)",
-          "6. Batlagundu Flowers FPC Ltd. (Dindigul — 300 Farmers)",
-          "7. Kallal Pasumai Ulavar FPC Ltd. (Sivaganga — 310 Farmers)",
-          "8. Thanjai Thoothukudi Agri FPC Ltd. (Thoothukudi — 300 Farmers)",
-          "9. Kovilpatti Marudham FPC Ltd. (Thoothukudi — 315 Farmers, Millets & Pulses)",
-          "10. Kizhkadaiyanallur Agrotech FPC Ltd. (Tenkasi — 305 Farmers)",
-          "11. Surandai Agro Tech FPC Ltd. (Tenkasi — 312 Farmers, Tomato & Chillies)",
-          "12. Aruppukottai Marudham FPC Ltd. (Virudhunagar — 320 Farmers)",
-          "13. Chekkanurani Neidhal FPC Ltd. (Madurai — 300 Farmers)",
-          "14. Usilampatti Organic FPC Ltd. (Madurai — 304 Farmers)",
-          "15. Melur Mullai Agri FPC Ltd. (Madurai — 300 Farmers)",
-          "16. Tiruchuli Vivasaya FPC Ltd. (Virudhunagar — 300 Farmers)",
-          "17. Ramanathapuram Kadalkanni FPC Ltd. (Ramanathapuram — 300 Farmers)",
-          "18. Thiruvarur Delta FPC Ltd. (Thiruvarur — 300 Farmers)",
-          "19. Thanjavur Vallam FPC Ltd. (Thanjavur — 300 Farmers)",
-          "20. Sivagangai Chettinad Millets FPC Ltd. (Sivagangai — 300 Farmers)",
-          "21. Dindigul Sirumalai Banana FPC Ltd. (Dindigul — 300 Farmers)",
-          "22. Cumbum Valley Grapes FPC Ltd. (Theni — 300 Farmers)",
-          "23. Alangulam Green Farm FPC Ltd. (Tenkasi — 300 Farmers)",
-          "24. Ottapidaram Cotton & Chillies FPC Ltd. (Thoothukudi — 300 Farmers)",
-          "25. Mudukulathur Agro FPC Ltd. (Ramanathapuram — 300 Farmers)"
-        ]
-      };
-
-      const allFeaturedCbbos = [mabifEntry, ...window.FPO_DATA.cbboProfiles];
-
-      function renderFeaturedCBBOs() {
-        const q = cbboSearch.value.trim().toLowerCase();
-        const filtered = allFeaturedCbbos.filter(c => {
-          return !q ||
-            c.cbbo.toLowerCase().includes(q) ||
-            c.state.toLowerCase().includes(q) ||
-            c.focus.toLowerCase().includes(q) ||
-            c.fpos.some(f => f.toLowerCase().includes(q));
-        });
-        cbboCount.textContent = `Showing ${filtered.length} of ${allFeaturedCbbos.length} featured CBBO profiles`;
-        cbboMount.innerHTML = filtered.map(c => `
-          <article class="card card-hover">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-              <span class="badge badge-green">IA: ${c.ia}</span>
-              <span class="badge badge-amber">${c.state}</span>
-            </div>
-            <h3>${c.cbbo}</h3>
-            <p>${c.focus}</p>
-            <div style="background:var(--surface-alt); border:1px solid var(--border); border-radius:10px; padding:0.75rem 0.9rem;">
-              <div class="small" style="font-weight:700; margin-bottom:0.35rem; color:var(--primary-dark);">Documented Promoted FPOs (${c.fpos.length}):</div>
-              <ul class="small" style="margin:0; padding-left:1.1rem; max-height:210px; overflow-y:auto;">
-                ${c.fpos.map(f => `<li>${f}</li>`).join("")}
-              </ul>
-            </div>
-          </article>
-        `).join("");
-      }
-
-      cbboSearch.addEventListener("input", renderFeaturedCBBOs);
-      renderFeaturedCBBOs();
-
       // =========================================================================
       // 3. STATEWISE FPO REGISTRY EXPLORER + ADD NEW FPO (EXISTING FUNCTIONALITY)
       // =========================================================================
